@@ -1,0 +1,44 @@
+intents:
+  - greet
+  - goodbye
+  - register
+  - name
+  - location
+  - date_time
+  - age
+  - goodbye
+
+actions:
+- utter_greet
+- victim_name
+- crime_location 
+- enter_date_time
+- enter_age
+- confirm
+- utter_goodbye
+
+templates:
+  utter_greet:
+  - text: "Hey! This is Copsbot. I can help to registering compalints. If you want to register compalint type 'r'."
+
+  victim_name:
+  - text: "Can you please tell me the victim's name?"
+  
+  crime_location:
+  - text: "What is the location of crime?"
+  
+  enter_date_time:
+  - text: "What is the date and time of the crime?"
+  
+  enter_age:
+  - text: "Please enter the age of the victim."
+  
+  deatils:
+  - text: "Here are your complaint details: Victim's name: @name; Crime location: @location; Date and Time: @date and @time; Victim's age: @age"
+
+  confirm:
+  - text: "Your complaint is submitted successfully."
+  
+  utter_goodbye:
+  - text: "- Take care"
+          
