@@ -1,44 +1,88 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - register
-  - name
-  - location
-  - date_time
-  - age
-  - goodbye
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- copsbot_registration
+- copsbot_name_s1
+- copsbot_age_s2
+- copsbot_gender_s3
+- copsbot_location_s4
+- copsbot_complaint_catagory_s5
+- copsbot_complaint_description_s6
+- copsbot_details_recorded
+responses:
+  utter_greet:
+  - text: Hey! I am CopsBot. I can help you in registering a complaint! Type Register
+      to get started.
+    buttons:
+        - title: "Register"
+          payload: "/copsbot_registration"
+        - title: "cancel"
+          payload: "/bot_challenge"
+  utter_step_1:
+  - text: What is Victim's name?
+  utter_step_2:
+  - text: What is Victim's age?
+  utter_step_3:
+  - text: What is Victim's gender?
+    buttons:
+      - title: "Male"
+        payload: "Male"
+      - title: "Female"
+        payload: "Female"
+  utter_step_4:
+  - text: What is the crime location?
+  utter_step_5:
+  - text: Select crime catagory
+    buttons:
+      - title: "Theft"
+        payload: "t1"
+      - title: "Rape"
+        payload: "r2"
+      - title: "Accident"
+        payload: "a3" 
+  utter_step_6:
+  - text: Describe your crime in brief.
 
+  utter_step_final:
+  - text: Your details have been recorded. Press save to save the details
+    buttons:
+      - title: "Save"
+        payload: "Save"
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Your complaint has been saved! 
+    buttons:
+      - title: "Register Another Complaint"
+        payload: "/copsbot_registration"
+      - title: "Call Police"
+        payload: "http://100"
+  utter_iamabot:
+  - text: That was an invalid response. Try again!
 actions:
 - utter_greet
-- victim_name
-- crime_location 
-- enter_date_time
-- enter_age
-- confirm
+- utter_step_1
+- utter_step_2
+- utter_step_3
+- utter_step_4
+- utter_step_5
+- utter_step_6
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
 - utter_goodbye
-
-templates:
-  utter_greet:
-  - text: "Hey! This is Copsbot. I can help to registering compalints. If you want to register compalint type 'r'."
-
-  victim_name:
-  - text: "Can you please tell me the victim's name?"
-  
-  crime_location:
-  - text: "What is the location of crime?"
-  
-  enter_date_time:
-  - text: "What is the date and time of the crime?"
-  
-  enter_age:
-  - text: "Please enter the age of the victim."
-  
-  deatils:
-  - text: "Here are your complaint details: Victim's name: @name; Crime location: @location; Date and Time: @date and @time; Victim's age: @age"
-
-  confirm:
-  - text: "Your complaint is submitted successfully."
-  
-  utter_goodbye:
-  - text: "- Take care"
-          
+- utter_iamabot
+- utter_step_final

@@ -1,0 +1,29 @@
+*Copsbot flow*
+
+User: HI
+Copsbot:  Hello, I am Copsbot!
+
+User: I want to register a complaint
+Copsbot: OKay, Type register to register a complaint
+
+User: Register
+Copsbot: What is Victim's name?
+
+User: "Some name"
+Copsbot: What is the location of the crime?
+
+User: "Some location"
+Copsbot: "What is the date and time of the crime?"
+
+User: "Some adress and date for the crime"
+Copsbot: "Enter the age of the victim"
+
+User: "Some age"
+Copsbot: "Here are the details of the complaint"
+
+Copsbot: Your complaint has been registered
+ 
+
+
+
+
